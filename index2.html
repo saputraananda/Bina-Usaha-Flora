@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bina Usaha Flora | Maintenance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 6rem;
+            margin: 0;
+            color: #ff6b6b;
+        }
+        p {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            opacity: 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p id="animatedText">Oops! Website Sedang Dalam Perbaikan</p>
+    </div>
+    <script>
+        const textElement = document.getElementById('animatedText');
+        const text = textElement.textContent;
+        textElement.textContent = ''; // Clear text initially
+        textElement.style.opacity = '1'; // Make text visible
+        
+        let index = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                textElement.textContent += text[index];
+                index++;
+                setTimeout(typeText, 100); // Adjust speed here (100ms per character)
+            }
+        }
+
+        typeText();
+    </script>
+</body>
+</html>
